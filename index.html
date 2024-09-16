@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old School RuneScape - Alchemy Profit Calculator</title>
+    
+    <link rel="icon" type="image/webp" href="osrs-coins.webp">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        body {
+            background-color: #101010;
+        }
+        .table-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .dataTables_wrapper {
+            overflow-x: auto;
+        }
+
+        @media (max-width: 1030px) {
+            .table-container {
+                padding: 0;
+            }
+        }
+
+        /* Custom styles for dark theme */
+        table.dataTable {
+            color: #e2e8f0 !important;
+            background-color: #1a202c !important;
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+        }
+
+        table.dataTable thead th,
+        table.dataTable thead td {
+            background-color: #2d3748 !important;
+            border-bottom: 1px solid #4a5568 !important;
+            color: #fff !important;
+        }
+
+        table.dataTable tbody tr {
+            background-color: #1e2533 !important;
+        }
+
+        table.dataTable tbody tr:nth-of-type(even) {
+            background-color: #1a202c !important;
+        }
+
+        table.dataTable.stripe tbody tr.odd,
+        table.dataTable.display tbody tr.odd {
+            background-color: #1e2533 !important;
+        }
+
+        table.dataTable.stripe tbody tr.even,
+        table.dataTable.display tbody tr.even {
+            background-color: #1a202c !important;
+        }
+
+        table.dataTable.hover tbody tr:hover,
+        table.dataTable.display tbody tr:hover {
+            background-color: #2c3344 !important;
+        }
+
+        table.dataTable.order-column tbody tr > .sorting_1,
+        table.dataTable.order-column tbody tr > .sorting_2,
+        table.dataTable.order-column tbody tr > .sorting_3,
+        table.dataTable.display tbody tr > .sorting_1,
+        table.dataTable.display tbody tr > .sorting_2,
+        table.dataTable.display tbody tr > .sorting_3 {
+            background-color: #2c3344 !important;
+        }
+
+        table.dataTable.no-footer {
+            border-bottom: 1px solid #4a5568 !important;
+        }
+
+        .dataTables_wrapper .dataTables_length,
+        .dataTables_wrapper .dataTables_filter,
+        .dataTables_wrapper .dataTables_info,
+        .dataTables_wrapper .dataTables_processing,
+        .dataTables_wrapper .dataTables_paginate {
+            color: #e2e8f0 !important;
+        }
+
+        .dataTables_wrapper .dataTables_filter input {
+            background-color: #2d3748 !important;
+            color: #e2e8f0 !important;
+            border: 1px solid #4a5568 !important;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            color: #e2e8f0 !important;
+            background: transparent !important;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+            color: #2d3748 !important;
+            background: #e2e8f0 !important;
+            border: 1px solid #4a5568 !important;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+            color: #2d3748 !important;
+            background: #a0aec0 !important;
+            border: 1px solid #4a5568 !important;
+        }
+    </style>
+</head>
+<body class="text-gray-100 flex flex-col min-h-screen">
+    <header class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-center">
+            <a href="index.html" class="flex items-center">
+                <img src="osrs-coins.webp" alt="OSRS Coins" class="h-8 w-8 mr-3">
+                <h1 class="text-2xl md:text-3xl font-bold">OSRS Alchemy Profit Calculator</h1>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <section class="mb-8 max-w-[1000px] mx-auto">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <h2 class="text-xl md:text-2xl font-semibold mb-4">How does Alchemy in OSRS work?</h2>
+                    <p class="mb-4">
+                        In Old School RuneScape (OSRS), <a href="https://oldschool.runescape.wiki/w/Alchemy" class="text-blue-400 hover:underline" target="_blank">Alchemy</a> is a magic spell that converts items into gold coins. It's a popular method for training the Magic skill while potentially making a profit. There are two types of Alchemy spells:
+                    </p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><a href="https://oldschool.runescape.wiki/w/Low_Level_Alchemy" class="text-blue-400 hover:underline" target="_blank">Low Level Alchemy (Low Alch)</a>: Converts an item to coins at 40% of its base value.</li>
+                        <li class="ml-8">Requires 1 <a href="https://oldschool.runescape.wiki/w/Nature_rune" class="text-blue-400 hover:underline" target="_blank">Nature Rune</a> and 3 <a href="https://oldschool.runescape.wiki/w/Fire_rune" class="text-blue-400 hover:underline" target="_blank">Fire Runes</a></li>
+                        <li><a href="https://oldschool.runescape.wiki/w/High_Level_Alchemy" class="text-blue-400 hover:underline" target="_blank">High Level Alchemy (High Alch)</a>: Converts an item to coins at 60% of its base value.</li>
+                        <li class="ml-8">Requires 1 <a href="https://oldschool.runescape.wiki/w/Nature_rune" class="text-blue-400 hover:underline" target="_blank">Nature Rune</a> and 5 <a href="https://oldschool.runescape.wiki/w/Fire_rune" class="text-blue-400 hover:underline" target="_blank">Fire Runes</a></li>
+                    </ul>
+                    <p class="text-sm italic mb-4">
+                        Note: Wielding a <a href="https://oldschool.runescape.wiki/w/Staff_of_fire" class="text-blue-400 hover:underline" target="_blank">Staff of Fire</a> will waive the requirement of fire runes, saving you 20-30gp per cast.
+                    </p>
+                    <p class="mb-4">
+                        The <a href="https://oldschool.runescape.wiki/w/Grand_Exchange" class="text-blue-400 hover:underline" target="_blank">Grand Exchange (GE)</a> is OSRS's marketplace where players can buy and sell items. By purchasing items from the GE and casting Alchemy on them, players can gain Magic experience and potentially make a profit.
+                    </p>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#haAlchemySection" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Jump to High Alchemy Table
+                        </a>
+                        <a href="#laAlchemySection" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                            Jump to Low Alchemy Table
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <!-- Add your gif here -->
+                    <img src="High Level Alchemy.gif" alt="High Level Alchemy Animation" class="w-full h-auto">
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <h2 class="text-xl md:text-2xl font-semibold mb-4">What Items Are Best For Alchemy?</h2>
+                <p class="mb-4">
+                    This calculator helps you find items that are profitable to alchemize based on current Grand Exchange prices. It takes into account the cost of nature runes required for casting the spell.
+                </p>
+                <p class="mb-4">
+                    When choosing items for alchemy, there are three main factors to consider:
+                </p>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Highest Profit:</strong> These items give you the most gold per cast, allowing you to make money quickly. However, they often have low overall returns and limited buy limits.</li>
+                    <li><strong>Highest Return:</strong> Items with the highest percentage return are the most efficient use of your capital, especially if you're starting with a low bankroll. They may not yield the highest raw profit but offer the best gold efficiency.</li>
+                    <li><strong>High Limit:</strong> Items with high buy limits are ideal for background alching or long alching sessions, as you can purchase large quantities without hitting GE restrictions.</li>
+                </ul>
+                <p class="mb-4">
+                    A balanced approach considering all three factors often yields the best results. This is why our table is initially sorted by a composite score that takes into account profitability, efficiency, and convenience. The table dynamically adjusts based on your input bankroll and available time. By factoring in your specific bankroll and time constraints, we provide personalized recommendations tailored to your alching session, helping you maximize your profits within your given parameters.
+                </p>
+                
+            </div>
+        </section>
+
+        <div class="mb-8 p-4 bg-gray-800 max-w-[1000px] mx-auto rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4 text-white">Customize Your Alching Session</h3>
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-full md:w-2/5 px-2 mb-4">
+                    <label for="bankroll" class="block text-sm font-medium text-gray-300 mb-2">
+                        Bankroll:
+                    </label>
+                    <div class="flex items-center">
+                        <input type="text" id="bankrollInput" name="bankrollInput"
+                            class="w-3/4 px-2 py-1 bg-gray-700 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="e.g., 100k, 10m, 1b">
+                            <span class="bg-gray-600 text-white px-2 py-1 rounded-r-lg">gp</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-1">Assuming you already have the Nature runes</p>
+                </div>
+                <div class="w-full md:w-2/5 px-2 mb-4">
+                    <label for="time" class="block text-sm font-medium text-gray-300 mb-2">
+                        Time:
+                    </label>
+                    <div class="flex items-center">
+                        <input type="number" id="timeInput" name="timeInput" max="1440"
+                            class="w-3/4 px-2 py-1 bg-gray-700 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <span class="bg-gray-600 text-white px-2 py-1 rounded-r-lg">minutes</span>
+                    </div>
+                    <p id="alchCasts" class="text-xs text-gray-400 mt-1"></p>
+                </div>
+                <div class="w-full md:w-1/5 px-2 mb-4 flex items-end">
+                    <div class="w-full pt-6">
+                        <button id="refreshInputs" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded">
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p class="text-sm text-gray-300 mt-4">
+                Note: This calculation assumes you'll purchase a single item type from the Grand Exchange, up to your specified bankroll and within the item's buy limit. It then estimates your potential profit if you were to alchemize these items consistently for the duration you've set.
+            </p>
+        </div>
+        <section class="mb-8 max-w-[1000px] mx-auto">
+        <p class="mb-4">
+            Please note that due to the live nature of the OSRS market, the prices and quantities shown may not be available by the time you place your offer in the Grand Exchange. Market conditions can change rapidly.
+        </p>
+        </section>
+
+        
+
+        <div class="table-container">
+            <div class="flex justify-between items-center mb-3 mt-6">
+                <h2 id="haAlchemySection" class="text-2xl font-semibold">High Alchemy Profits</h2>
+                <button id="refreshHATable" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                    Refresh
+                </button>
+            </div>
+            <table id="haAlchemyTable" class="display" style="width:100%"></table>
+        </div>
+        <div class="table-container">
+            <div class="flex justify-between items-center mb-3 mt-6">
+                <h2 id="laAlchemySection" class="text-2xl font-semibold">Low Alchemy Profits</h2>
+                <button id="refreshLATable" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                    Refresh
+                </button>
+            </div>
+            <table id="laAlchemyTable" class="display" style="width:100%"></table>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 OSRS Alchemy Profit Calculator. Not affiliated with Jagex or RuneScape.</p>
+            <div class="mt-4 flex justify-center items-center space-x-4">
+                <a href="privacy-policy.html" class="underline">Privacy Policy</a>
+                <a href="terms-of-service.html" class="underline">Terms of Service</a>
+                <a href="https://buymeacoffee.com/spr3adsh33t" target="_blank" class="inline-block bg-yellow-500 text-black px-4 py-2 rounded-full hover:bg-yellow-400 transition duration-300">
+                    <span class="mr-2">☕</span>Buy me a coffee
+                </a>
+            </div>
+            <p class="mt-4 text-sm">
+                Price data sourced from <a href="https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices" target="_blank" class="underline">OSRS Wiki Real-time Prices</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
