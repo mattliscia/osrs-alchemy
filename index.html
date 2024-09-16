@@ -210,7 +210,7 @@
 
         <div class="mb-8 p-4 bg-gray-800 max-w-[1000px] mx-auto rounded-lg shadow-md">
             <h3 class="text-xl font-semibold mb-4 text-white">Customize Your Alching Session</h3>
-            <div class="flex flex-wrap -mx-2">
+            <div class="flex flex-wrap -mx-2 relative">
                 <div class="w-full md:w-2/5 px-2 mb-4">
                     <label for="bankroll" class="block text-sm font-medium text-gray-300 mb-2">
                         Bankroll:
@@ -234,12 +234,10 @@
                     </div>
                     <p id="alchCasts" class="text-xs text-gray-400 mt-1"></p>
                 </div>
-                <div class="w-full md:w-1/5 px-2 mb-4 flex items-end">
-                    <div class="w-full pt-6">
-                        <button id="refreshInputs" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded">
-                            Refresh
-                        </button>
-                    </div>
+                <div class="w-full md:w-1/5 px-2 mb-4 md:absolute md:right-0 md:top-8">
+                    <button id="refreshInputs" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded">
+                        Refresh
+                    </button>
                 </div>
             </div>
             <p class="text-sm text-gray-300 mt-4">
