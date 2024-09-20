@@ -363,14 +363,35 @@ function updateAlchCasts() {
     $('#alchCasts').text(`High Alchemy: ${highAlchCasts} casts | Low Alchemy: ${lowAlchCasts} casts`);
 }
 
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
 function initializeInputs() {
     const $bankrollInput = $('#bankrollInput');
     const $timeInput = $('#timeInput');
     const $refreshInputs = $('#refreshInputs');
 
+    // Load values from cookies or set defaults
+    const savedBankroll = getCookie('bankroll') || '100,000';
+    const savedTime = getCookie('time') || '10';
+
     // Set initial values
-    $bankrollInput.val('100,000');
-    $timeInput.val('10');
+    $bankrollInput.val(savedBankroll);
+    $timeInput.val(savedTime);
 
     // Update alch casts display
     updateAlchCasts();
@@ -378,8 +399,10 @@ function initializeInputs() {
     // Add event listeners
     $bankrollInput.on('input', function() {
         const value = parseBankrollInput(this.value);
+        console.log(value);
         if (!isNaN(value)) {
             this.value = formatNumber(value);
+            setCookie('bankroll', this.value, 30); // Save to cookie for 30 days
         }
         updateAlchCasts();
     });
@@ -399,6 +422,7 @@ function initializeInputs() {
         }
         this.value = value;
         $(this).attr('min', '1');
+        setCookie('time', value, 30); // Save to cookie for 30 days
         updateAlchCasts();
     });
 
