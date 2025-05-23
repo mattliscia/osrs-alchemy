@@ -154,61 +154,7 @@
     </header>
 
     <main class="flex-grow container mx-auto px-4 py-8">
-        <section class="mb-8 max-w-[1000px] mx-auto">
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2">
-                    <h2 class="text-xl md:text-2xl font-semibold mb-4">How does Alchemy in OSRS work?</h2>
-                    <p class="mb-4">
-                        In Old School RuneScape (OSRS), <a href="https://oldschool.runescape.wiki/w/Alchemy" class="text-blue-400 hover:underline" target="_blank">Alchemy</a> is a magic spell that converts items into gold coins. It's a popular method for money making while also training the Magic skill. There are two types of Alchemy spells:
-                    </p>
-                    <ul class="list-disc list-inside mb-4">
-                        <li><a href="https://oldschool.runescape.wiki/w/Low_Level_Alchemy" class="text-blue-400 hover:underline" target="_blank">Low Level Alchemy (Low Alch)</a>: Converts an item to coins at 40% of its base value.</li>
-                        <li class="ml-8">Requires 1 <a href="https://oldschool.runescape.wiki/w/Nature_rune" class="text-blue-400 hover:underline" target="_blank">Nature Rune</a> and 3 <a href="https://oldschool.runescape.wiki/w/Fire_rune" class="text-blue-400 hover:underline" target="_blank">Fire Runes</a></li>
-                        <li class="ml-8">Requires Magic level 21</li>
-                        <li><a href="https://oldschool.runescape.wiki/w/High_Level_Alchemy" class="text-blue-400 hover:underline" target="_blank">High Level Alchemy (High Alch)</a>: Converts an item to coins at 60% of its base value.</li>
-                        <li class="ml-8">Requires 1 <a href="https://oldschool.runescape.wiki/w/Nature_rune" class="text-blue-400 hover:underline" target="_blank">Nature Rune</a> and 5 <a href="https://oldschool.runescape.wiki/w/Fire_rune" class="text-blue-400 hover:underline" target="_blank">Fire Runes</a></li>
-                        <li class="ml-8">Requires Magic level 55</li>
-                    </ul>
-                    <p class="text-sm italic mb-4">
-                        Note: Wielding a <a href="https://oldschool.runescape.wiki/w/Staff_of_fire" class="text-blue-400 hover:underline" target="_blank">Staff of Fire</a> will waive the requirement of fire runes, saving you 20-30gp per cast.
-                    </p>
-                    <p class="mb-4">
-                        The <a href="https://oldschool.runescape.wiki/w/Grand_Exchange" class="text-blue-400 hover:underline" target="_blank">Grand Exchange (GE)</a> is OSRS's marketplace where players can buy and sell items. By purchasing items from the GE and casting Alchemy on them, players can gain Magic experience and potentially make a profit.
-                    </p>
-                    <div class="flex space-x-4 mb-4">
-                        <a href="#haAlchemySection" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Jump to High Alchemy Table
-                        </a>
-                        <a href="#laAlchemySection" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                            Jump to Low Alchemy Table
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <!-- Add your gif here -->
-                    <img src="High Level Alchemy.gif" alt="High Level Alchemy Animation" class="w-full h-auto">
-                </div>
-            </div>
-            
-            <div class="mt-8">
-                <h2 class="text-xl md:text-2xl font-semibold mb-4">What Items Are Best For Alchemy?</h2>
-                <p class="mb-4">
-                    This calculator helps you find items that are profitable to alchemize based on current Grand Exchange prices. It takes into account the cost of nature runes required for casting the spell.
-                </p>
-                <p class="mb-4">
-                    When choosing items for alchemy, there are three main factors to consider:
-                </p>
-                <ul class="list-disc list-inside mb-4">
-                    <li><strong>Highest Profit:</strong> These items give you the most gold per cast, allowing you to make money quickly. However, they often have low overall returns and limited buy limits.</li>
-                    <li><strong>Highest Return:</strong> Items with the highest percentage return are the most efficient use of your capital, especially if you're starting with a low bankroll. They may not yield the highest raw profit but offer the best gold efficiency.</li>
-                    <li><strong>High Limit:</strong> Items with high buy limits are ideal for background alching or long alching sessions, as you can purchase large quantities without hitting GE restrictions.</li>
-                </ul>
-                <p class="mb-4">
-                    A balanced approach considering all three factors often yields the best results. This is why our table is initially sorted by a composite score that takes into account profitability, efficiency, and convenience. The table dynamically adjusts based on your input bankroll and available time. By factoring in your specific bankroll and time constraints, we provide personalized recommendations tailored to your alching session, helping you maximize your profits within your given parameters.
-                </p>
-                
-            </div>
-        </section>
+        
 
         <div class="mb-8 p-4 bg-gray-800 max-w-[1000px] mx-auto rounded-lg shadow-md">
             <h3 class="text-xl font-semibold mb-4 text-white">Customize Your Alching Session</h3>
@@ -272,11 +218,66 @@
             </div>
             <table id="laAlchemyTable" class="display" style="width:100%"></table>
         </div>
+        <section class="mb-8 max-w-[1000px] mx-auto">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <h2 class="text-xl md:text-2xl font-semibold mb-4">How does Alchemy in OSRS work?</h2>
+                    <p class="mb-4">
+                        In Old School RuneScape (OSRS), <a href="https://oldschool.runescape.wiki/w/Alchemy" class="text-blue-400 hover:underline" target="_blank">Alchemy</a> is a magic spell that converts items into gold coins. It's a popular method for money making while also training the Magic skill. There are two types of Alchemy spells:
+                    </p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><a href="https://oldschool.runescape.wiki/w/Low_Level_Alchemy" class="text-blue-400 hover:underline" target="_blank">Low Level Alchemy (Low Alch)</a>: Converts an item to coins at 40% of its base value.</li>
+                        <li class="ml-8">Requires 1 <a href="https://oldschool.runescape.wiki/w/Nature_rune" class="text-blue-400 hover:underline" target="_blank">Nature Rune</a> and 3 <a href="https://oldschool.runescape.wiki/w/Fire_rune" class="text-blue-400 hover:underline" target="_blank">Fire Runes</a></li>
+                        <li class="ml-8">Requires Magic level 21</li>
+                        <li><a href="https://oldschool.runescape.wiki/w/High_Level_Alchemy" class="text-blue-400 hover:underline" target="_blank">High Level Alchemy (High Alch)</a>: Converts an item to coins at 60% of its base value.</li>
+                        <li class="ml-8">Requires 1 <a href="https://oldschool.runescape.wiki/w/Nature_rune" class="text-blue-400 hover:underline" target="_blank">Nature Rune</a> and 5 <a href="https://oldschool.runescape.wiki/w/Fire_rune" class="text-blue-400 hover:underline" target="_blank">Fire Runes</a></li>
+                        <li class="ml-8">Requires Magic level 55</li>
+                    </ul>
+                    <p class="text-sm italic mb-4">
+                        Note: Wielding a <a href="https://oldschool.runescape.wiki/w/Staff_of_fire" class="text-blue-400 hover:underline" target="_blank">Staff of Fire</a> will waive the requirement of fire runes, saving you 20-30gp per cast.
+                    </p>
+                    <p class="mb-4">
+                        The <a href="https://oldschool.runescape.wiki/w/Grand_Exchange" class="text-blue-400 hover:underline" target="_blank">Grand Exchange (GE)</a> is OSRS's marketplace where players can buy and sell items. By purchasing items from the GE and casting Alchemy on them, players can gain Magic experience and potentially make a profit.
+                    </p>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#haAlchemySection" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Jump to High Alchemy Table
+                        </a>
+                        <a href="#laAlchemySection" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                            Jump to Low Alchemy Table
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <!-- Add your gif here -->
+                    <img src="High Level Alchemy.gif" alt="High Level Alchemy Animation" class="w-full h-auto">
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <h2 class="text-xl md:text-2xl font-semibold mb-4">What Items Are Best For Alchemy?</h2>
+                <p class="mb-4">
+                    This calculator helps you find items that are profitable to alchemize based on current Grand Exchange prices. It takes into account the cost of nature runes required for casting the spell.
+                </p>
+                <p class="mb-4">
+                    When choosing items for alchemy, there are three main factors to consider:
+                </p>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Highest Profit:</strong> These items give you the most gold per cast, allowing you to make money quickly. However, they often have low overall returns and limited buy limits.</li>
+                    <li><strong>Highest Return:</strong> Items with the highest percentage return are the most efficient use of your capital, especially if you're starting with a low bankroll. They may not yield the highest raw profit but offer the best gold efficiency.</li>
+                    <li><strong>High Limit:</strong> Items with high buy limits are ideal for background alching or long alching sessions, as you can purchase large quantities without hitting GE restrictions.</li>
+                </ul>
+                <p class="mb-4">
+                    A balanced approach considering all three factors often yields the best results. This is why our table is initially sorted by a composite score that takes into account profitability, efficiency, and convenience. The table dynamically adjusts based on your input bankroll and available time. By factoring in your specific bankroll and time constraints, we provide personalized recommendations tailored to your alching session, helping you maximize your profits within your given parameters.
+                </p>
+                
+            </div>
+        </section>
     </main>
 
     <footer class="bg-gray-900 text-white p-4 mt-8">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 OSRS Alchemy Profit Calculator. Not affiliated with Jagex or RuneScape.</p>
+            <p>&copy; 2025 OSRS Alchemy Profit Calculator. Not affiliated with Jagex or RuneScape.</p>
             <div class="mt-4 flex flex-col items-center">
                 
                 <div class="flex space-x-4">
