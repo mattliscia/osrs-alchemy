@@ -18,7 +18,7 @@ async function processData() {
     const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
 
     const mergedData = mapping
-        .filter(item => item.name !== "Old school bond" && item.limit !== undefined && item.limit !== null)
+        .filter(item => item.name !== "Old school bond" && !item.name.toLowerCase().includes("contract") && item.limit !== undefined && item.limit !== null)
         .map(item => {
             const id = item.id;
             const priceInfo = priceData.data[id];
