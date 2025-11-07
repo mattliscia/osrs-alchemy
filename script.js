@@ -120,7 +120,7 @@ function calculatePotentialProfit(row, bankroll, timeInMinutes, isHighAlch) {
 }
 
 function populateTables(laData, haData) {
-    const bankroll = parseBankrollInput($('#bankrollInput').val()) || 100000;
+    const bankroll = parseBankrollInput($('#bankrollInput').val()) || 1000000;
     const timeInMinutes = parseInt($('#timeInput').val()) || 10;
     console.log('Populating tables with:');
     console.log('Bankroll:', bankroll);
