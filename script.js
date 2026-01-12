@@ -281,6 +281,10 @@ function populateTables(laData, haData) {
         order: [[laColumns.length - 1, 'desc']] // Sort by the last column (Potential Profit) in descending order
     };
 
+    // Hide loading messages
+    $('#haAlchemyLoading').hide();
+    $('#laAlchemyLoading').hide();
+
     $('#laAlchemyTable').DataTable({
         data: laData,
         columns: laColumns,

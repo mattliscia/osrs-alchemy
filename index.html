@@ -202,6 +202,12 @@
 
         
 
+        <noscript>
+            <div class="bg-yellow-900 border border-yellow-600 text-yellow-200 px-4 py-3 rounded mb-6 max-w-[1000px] mx-auto">
+                <strong>JavaScript Required:</strong> This calculator requires JavaScript to fetch live prices from the OSRS Wiki API and display alchemy profit data. Please enable JavaScript in your browser to use this tool.
+            </div>
+        </noscript>
+
         <div class="table-container">
             <div class="flex justify-between items-center mb-3 mt-6">
                 <h2 id="haAlchemySection" class="text-2xl font-semibold">High Alchemy Profits</h2>
@@ -209,6 +215,7 @@
                     Refresh
                 </button>
             </div>
+            <div id="haAlchemyLoading" class="text-center py-8 text-gray-400 bg-gray-800 rounded">Loading High Alchemy data from OSRS Wiki...</div>
             <table id="haAlchemyTable" class="display" style="width:100%"></table>
         </div>
         <div class="table-container">
@@ -218,6 +225,7 @@
                     Refresh
                 </button>
             </div>
+            <div id="laAlchemyLoading" class="text-center py-8 text-gray-400 bg-gray-800 rounded">Loading Low Alchemy data from OSRS Wiki...</div>
             <table id="laAlchemyTable" class="display" style="width:100%"></table>
         </div>
         <section class="mb-8 max-w-[1000px] mx-auto">
