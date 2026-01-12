@@ -153,6 +153,11 @@
                 <h1 class="text-2xl md:text-3xl font-bold">OSRS Alchemy Profit Calculator</h1>
             </a>
         </div>
+        <nav class="container mx-auto flex justify-center mt-4 space-x-6">
+            <a href="index.html" class="text-yellow-400 font-semibold">Calculator</a>
+            <a href="guide.html" class="text-gray-300 hover:text-white">Guide</a>
+            <a href="about.html" class="text-gray-300 hover:text-white">About</a>
+        </nav>
     </header>
 
     <main class="flex-grow container mx-auto px-4 py-8">
@@ -280,8 +285,195 @@
                 <p class="mb-4">
                     A balanced approach considering all three factors often yields the best results. This is why our table is initially sorted by a composite score that takes into account profitability, efficiency, and convenience. The table dynamically adjusts based on your input bankroll and available time. By factoring in your specific bankroll and time constraints, we provide personalized recommendations tailored to your alching session, helping you maximize your profits within your given parameters.
                 </p>
-                
             </div>
+
+            <!-- Tips & Strategies Section -->
+            <div class="mt-8">
+                <h2 class="text-xl md:text-2xl font-semibold mb-4">Alchemy Tips & Strategies</h2>
+                <p class="mb-4">
+                    Whether you're a beginner or an experienced player, these tips will help you maximize your alchemy profits and efficiency:
+                </p>
+
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Equipment Setup</h3>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li><strong>Always use a Staff of Fire:</strong> This eliminates the need for fire runes entirely, saving you 20-30gp per cast. A basic <a href="https://oldschool.runescape.wiki/w/Staff_of_fire" class="text-blue-400 hover:underline" target="_blank">Staff of Fire</a> costs very little and pays for itself within minutes.</li>
+                    <li><strong>Consider a Tome of Fire:</strong> If you're using a different staff (like <a href="https://oldschool.runescape.wiki/w/Bryophyta%27s_staff" class="text-blue-400 hover:underline" target="_blank">Bryophyta's Staff</a> for its nature rune saving effect), a <a href="https://oldschool.runescape.wiki/w/Tome_of_fire" class="text-blue-400 hover:underline" target="_blank">Tome of Fire</a> can provide unlimited fire runes.</li>
+                    <li><strong>Explorer's Ring for free alchs:</strong> The <a href="https://oldschool.runescape.wiki/w/Explorer%27s_ring_4" class="text-blue-400 hover:underline" target="_blank">Explorer's Ring 4</a> from the Lumbridge & Draynor Diary provides 30 free High Alchs per day!</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">AFK Alching While Training Other Skills</h3>
+                <p class="mb-4">
+                    One of the best aspects of alchemy is that you can do it while training other skills. Here are popular combinations:
+                </p>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li><strong>Alching + Agility:</strong> Cast High Alch between obstacle completions on rooftop courses. This is one of the most popular methods as agility already requires constant clicking.</li>
+                    <li><strong>Alching + Fletching:</strong> Fletch items like longbows while alching between actions.</li>
+                    <li><strong>Alching + Cooking:</strong> Alch while waiting for fish to cook at the Rogues' Den or on a range.</li>
+                    <li><strong>Alching + Thieving:</strong> Cast alchs between pickpocket attempts for extra Magic XP.</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Buy Limit Strategies</h3>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li><strong>Rotate between items:</strong> If you're doing extended alching sessions, buy multiple profitable items to avoid hitting the 4-hour buy limit on any single item.</li>
+                    <li><strong>Buy overnight:</strong> Place GE offers before logging off so items are ready when you return.</li>
+                    <li><strong>Use instant buy prices:</strong> Our calculator shows both instant buy (high) and instant sell (low) prices. For quick purchases, expect to pay closer to the instant buy price.</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Common Mistakes to Avoid</h3>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li><strong>Not accounting for nature rune costs:</strong> Always factor in the ~90-100gp cost of nature runes when calculating profit. Our calculator does this automatically.</li>
+                    <li><strong>Ignoring buy limits:</strong> An item might be highly profitable but if the buy limit is only 70 per 4 hours, you won't be able to alch for very long.</li>
+                    <li><strong>Chasing tiny margins:</strong> Items with very small profit margins can swing to losses quickly as GE prices fluctuate. Consider items with at least 50gp+ profit for stability.</li>
+                    <li><strong>Forgetting to refresh prices:</strong> Market prices change constantly. Refresh this calculator before each session to ensure you're using current data.</li>
+                </ul>
+            </div>
+
+            <!-- XP & Training Section -->
+            <div class="mt-8">
+                <h2 class="text-xl md:text-2xl font-semibold mb-4">Magic XP & Training Rates</h2>
+                <p class="mb-4">
+                    Alchemy is not just about making money - it's also a reliable way to train Magic. Here's what you need to know about XP rates:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-2 text-blue-400">High Level Alchemy</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><strong>XP per cast:</strong> 65 Magic XP</li>
+                            <li><strong>Casts per hour:</strong> ~1,200 (focused)</li>
+                            <li><strong>XP per hour:</strong> ~78,000 Magic XP</li>
+                            <li><strong>Required level:</strong> 55 Magic</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-2 text-green-400">Low Level Alchemy</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li><strong>XP per cast:</strong> 31 Magic XP</li>
+                            <li><strong>Casts per hour:</strong> ~2,000 (faster cast time)</li>
+                            <li><strong>XP per hour:</strong> ~62,000 Magic XP</li>
+                            <li><strong>Required level:</strong> 21 Magic</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Magic Level Milestones</h3>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li><strong>Level 21:</strong> Unlocks Low Level Alchemy - your first money-making spell</li>
+                    <li><strong>Level 55:</strong> Unlocks High Level Alchemy - significantly better profits</li>
+                    <li><strong>Level 75:</strong> Unlocks Bones to Peaches - useful for PvM and more spell options</li>
+                    <li><strong>Level 99:</strong> Magic mastery! Most players achieve this partially through alching</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Alchemy vs Other Magic Training Methods</h3>
+                <p class="mb-4">
+                    How does alchemy compare to other popular Magic training methods?
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm mb-4">
+                        <thead>
+                            <tr class="bg-gray-800">
+                                <th class="p-2 text-left">Method</th>
+                                <th class="p-2 text-left">XP/Hour</th>
+                                <th class="p-2 text-left">Cost</th>
+                                <th class="p-2 text-left">Attention</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-2">High Alchemy</td>
+                                <td class="p-2">~78k</td>
+                                <td class="p-2 text-green-400">Profit!</td>
+                                <td class="p-2">Low-Medium</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-2">Splashing</td>
+                                <td class="p-2">~13k</td>
+                                <td class="p-2 text-red-400">~30k gp/hr</td>
+                                <td class="p-2">Very Low (AFK)</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-2">Bursting/Barraging</td>
+                                <td class="p-2">~200-400k</td>
+                                <td class="p-2 text-red-400">~500k+ gp/hr</td>
+                                <td class="p-2">High</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="p-2">Enchanting Bolts</td>
+                                <td class="p-2">~100k</td>
+                                <td class="p-2 text-yellow-400">Varies</td>
+                                <td class="p-2">Medium</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-400">
+                    High Alchemy stands out as the only Magic training method that can actually make you money while training. While the XP rates aren't as high as bursting/barraging, the fact that you're profiting instead of spending makes it an excellent choice for players building their bank.
+                </p>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="mt-8">
+                <h2 class="text-xl md:text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+
+                <div class="space-y-4">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-400 mb-2">What is the best item to alch right now?</h3>
+                        <p class="text-gray-300">
+                            The best item changes constantly based on Grand Exchange prices. Check the tables above - they're sorted by a composite score that balances profit, margin, and buy limit. Generally, items like Yew longbows, Rune items, and Dragonhide bodies are consistently good choices due to their high buy limits and stable prices.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-400 mb-2">How much GP per hour can I make alching?</h3>
+                        <p class="text-gray-300">
+                            This varies greatly depending on current prices and which items you choose. With focused alching (~1,200 casts/hour) and good item selection, you can typically make 100,000-300,000 GP per hour profit. Some items offer higher per-alch profit but have low buy limits, while others have smaller margins but can be alched indefinitely.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-400 mb-2">Should I use High Alchemy or Low Alchemy?</h3>
+                        <p class="text-gray-300">
+                            Almost always High Alchemy. Low Alchemy returns only 40% of an item's value compared to High Alchemy's 60%, making it rarely profitable. Low Alch is mainly useful for players below level 55 Magic or for niche situations. Once you have 55 Magic, stick with High Alch.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-400 mb-2">Where can I get Nature Runes cheaply?</h3>
+                        <p class="text-gray-300">
+                            The Grand Exchange is the easiest source - nature runes typically cost 90-110gp each. You can also buy them from magic shops in Varrock, Port Sarim, or the Mage Arena in the Wilderness. For Ironmen, runecrafting or the Abyss are the main methods to obtain nature runes.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-400 mb-2">Can I alch while doing other activities?</h3>
+                        <p class="text-gray-300">
+                            Yes! Alching is great for multitasking. Popular combinations include alching while training Agility on rooftop courses, while waiting for fish to cook, during Thieving, or while doing Fletching. Any activity with short idle periods works well with alchemy.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-400 mb-2">Why are some items showing negative profit?</h3>
+                        <p class="text-gray-300">
+                            Items show negative profit when their GE buy price plus nature rune cost exceeds their alchemy value. This can happen due to market fluctuations, items being in high demand, or simply items that were never meant to be profitable for alching. Avoid these items unless you're desperate to train Magic quickly.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-400 mb-2">How often does the price data update?</h3>
+                        <p class="text-gray-300">
+                            Our calculator fetches real-time data from the official OSRS Wiki prices API, which tracks Grand Exchange transactions continuously. Prices shown represent the most recent instant buy and sell prices. We recommend refreshing the page before each alching session for the most accurate data.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-yellow-400 mb-2">What's the difference between Profit and Margin?</h3>
+                        <p class="text-gray-300">
+                            <strong>Profit</strong> is the raw GP you earn per alch (Alch Value - Item Cost - Nature Rune Cost). <strong>Margin</strong> (or ROI) is the percentage return on your investment. An item with 100gp profit on a 500gp investment has a 20% margin. High margin items are better for small bankrolls; high profit items are better if you have capital to invest.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
@@ -299,6 +491,8 @@
                     </button>
                 </div>
                 <div class="flex space-x-4 mt-4">
+                    <a href="guide.html" class="underline">Alchemy Guide</a>
+                    <a href="about.html" class="underline">About</a>
                     <a href="privacy-policy.html" class="underline">Privacy Policy</a>
                     <a href="terms-of-service.html" class="underline">Terms of Service</a>
                 </div>
